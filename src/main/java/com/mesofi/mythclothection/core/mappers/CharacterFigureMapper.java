@@ -12,6 +12,7 @@ import org.springframework.util.StringUtils;
 @Mapper(componentModel = "spring")
 public interface CharacterFigureMapper {
 
+  @Mapping(target = "id", ignore = true)
   @Mapping(target = "baseName", source = "baseName")
   @Mapping(target = "distributionJPY.basePrice", source = "basePriceJPY")
   @Mapping(target = "distributionJPY.firstAnnouncementDate", source = "announcementDateJPY")
@@ -118,6 +119,7 @@ public interface CharacterFigureMapper {
 
   @Mapping(target = "id", source = "id")
   @Mapping(target = "baseName", source = "baseName")
+  @Mapping(target = "officialName", ignore = true)
   @Mapping(target = "distributionJPY.basePrice", source = "distributionJPY.basePrice")
   @Mapping(target = "distributionJPY.releasePrice", source = "distributionJPY.releasePrice")
   @Mapping(
