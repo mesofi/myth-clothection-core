@@ -1,0 +1,7 @@
+spring:
+  data:
+    application:
+      name: myth-clothection-core
+    mongodb:
+      host: localhost
+      database: myth-clothection-local
