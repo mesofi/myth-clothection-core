@@ -20,6 +20,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 @Slf4j
@@ -91,6 +92,8 @@ public class MythClothectionService {
     for (GalleryImage galleryImage : mythCharacterFigure.getGalleryImages()) {
       galleryImage.setUrl(calculateImageUrl(galleryImage.getUrl()));
     }
+
+    mythCharacterFigure.setBoxStyle(calculateBoxStyle(mythCharacterFigure.getBoxStyle()));
   }
 
   private BigDecimal calculateReleasePrice(MythCharacterFigure mythCharacterFigure) {
@@ -121,5 +124,14 @@ public class MythClothectionService {
 
   private String calculateImageUrl(String url) {
     return "https://imagizer.imageshack.com/v2/640x480q70/" + url + ".jpg";
+  }
+
+  private BoxStyle calculateBoxStyle(BoxStyle boxStyle) {
+    if (StringUtils.hasText(boxStyle.getBorderColor())) {
+      boxStyle.setBorderColor("#" + boxStyle.getBorderColor());
+    } else {
+      boxStyle.setBorderColor(null);
+    }
+    return boxStyle;
   }
 }

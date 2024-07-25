@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/characters")
+@CrossOrigin(origins = {"http://localhost:5173"})
 public class MythClothectionController {
 
   private final MythClothectionService mythClothectionService;

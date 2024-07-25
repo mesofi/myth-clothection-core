@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mesofi.mythclothection.core.model;
 
 import com.mesofi.mythclothection.core.converters.ConvertJPYToBigDecimal;
@@ -60,6 +56,18 @@ public class CharacterFigureSheet {
   @CsvCustomBindByName(column = "Release Date MXN", converter = ConvertToDate.class)
   private LocalDate releaseDateMXN;
 
+  @CsvBindByName(column = "Logo Type", required = true)
+  private String logoType;
+
+  @CsvCustomBindByName(
+      column = "Bandai Blue Logo",
+      required = true,
+      converter = ConvertToBoolean.class)
+  private boolean bandaiBlueLogo;
+
+  @CsvBindByName(column = "Border Color")
+  private String borderColor;
+
   @CsvBindByName(column = "Tamashii URL")
   private String tamashiiUrl;
 
@@ -71,15 +79,6 @@ public class CharacterFigureSheet {
 
   @CsvBindByName(column = "Series", required = true)
   private String series;
-
-  @CsvBindByName(column = "SS Box Logo Type", required = true)
-  private String ssBoxLogo;
-
-  @CsvCustomBindByName(
-      column = "Bandai Blue Logo",
-      required = true,
-      converter = ConvertToBoolean.class)
-  private boolean bandaiBlueLogo;
 
   @CsvBindByName(column = "Category", required = true)
   private String category;

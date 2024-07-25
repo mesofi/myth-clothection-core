@@ -15,12 +15,11 @@ public class CharacterFigureEntity {
   private String baseName;
   private Distribution distributionJPY;
   private Distribution distributionMXN;
+  private BoxStyle boxStyle;
   private String tamashiiUrl;
   private LineUp lineUp;
   private DistributionMethod distributionMethod;
   private Series series;
-  private SaintSeiyaBoxLogoType boxLogoType;
-  private boolean bandaiBlueLogo;
   private Category category;
   private BodyType bodyType;
   private int faces;

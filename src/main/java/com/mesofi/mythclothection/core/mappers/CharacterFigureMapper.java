@@ -25,17 +25,19 @@ public interface CharacterFigureMapper {
   @Mapping(target = "distributionMXN.releasePrice", source = "finalPriceMXN")
   @Mapping(target = "distributionMXN.preorderDate", source = "preorderDateMXN")
   @Mapping(target = "distributionMXN.releaseDate", source = "releaseDateMXN")
+  @Mapping(
+      target = "boxStyle.boxLogoType",
+      source = "logoType",
+      qualifiedByName = "customFieldBoxLogoTypeMapping")
+  @Mapping(target = "boxStyle.bandaiBlueLogo", source = "bandaiBlueLogo")
+  @Mapping(target = "boxStyle.borderColor", source = "borderColor")
+  @Mapping(target = "tamashiiUrl", source = "tamashiiUrl")
   @Mapping(target = "lineUp", source = "lineUp", qualifiedByName = "customFieldLineUpMapping")
   @Mapping(
       target = "distributionMethod",
       source = "distributionMethod",
       qualifiedByName = "customFieldDistributionMethodMapping")
   @Mapping(target = "series", source = "series", qualifiedByName = "customFieldSeriesMapping")
-  @Mapping(
-      target = "boxLogoType",
-      source = "ssBoxLogo",
-      qualifiedByName = "customFieldBoxLogoTypeMapping")
-  @Mapping(target = "bandaiBlueLogo", source = "bandaiBlueLogo")
   @Mapping(target = "category", source = "category", qualifiedByName = "customFieldCategoryMapping")
   @Mapping(target = "bodyType", source = "bodyType")
   @Mapping(target = "faces", source = "faces")
@@ -137,11 +139,13 @@ public interface CharacterFigureMapper {
   @Mapping(
       target = "distributionMXN.releaseDateDayConfirmed",
       source = "distributionMXN.releaseDateDayConfirmed")
+  @Mapping(target = "boxStyle.boxLogoType", source = "boxStyle.boxLogoType")
+  @Mapping(target = "boxStyle.bandaiBlueLogo", source = "boxStyle.bandaiBlueLogo")
+  @Mapping(target = "boxStyle.borderColor", source = "boxStyle.borderColor")
+  @Mapping(target = "tamashiiUrl", source = "tamashiiUrl")
   @Mapping(target = "lineUp", source = "lineUp")
   @Mapping(target = "distribution", source = "distributionMethod")
   @Mapping(target = "series", source = "series")
-  @Mapping(target = "boxLogoType", source = "boxLogoType")
-  @Mapping(target = "bandaiBlueLogo", source = "bandaiBlueLogo")
   @Mapping(target = "category", source = "category")
   @Mapping(target = "bodyType", source = "bodyType")
   @Mapping(target = "numberOfFaces", source = "faces")
